@@ -1,15 +1,15 @@
 dnl Process this file with autoconf to produce a configure script.
 
 AC_INIT(gladesrc.c)
-AM_INIT_AUTOMAKE(gentry, 0.1.10)
+AM_INIT_AUTOMAKE(gentry, 0.1.11)
 AM_CONFIG_HEADER(config.h)
 
 AC_PROG_CC
 AM_PROG_CC_STDC
 AC_HEADER_STDC
 
-AM_PATH_GTK(1.0.0, ,
-            AC_MSG_ERROR(Cannot find GTK: Is gtk-config in path?))
+PKG_PROG_PKG_CONFIG
+PKG_CHECK_MODULES(GTK, gtk+-2.0 > 2.0.0)
 
 dnl Only use -Wall if we have gcc
 if test "x$GCC" = "xyes"; then

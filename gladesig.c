@@ -137,14 +137,15 @@ int main(int argc, char *argv[])
     printf("    Table: %s\n", entry_table);
     printf("\n");
 
-    if (!mysql_connect(&astfhost, "", user, pass)) {
-	printf("Error connecting to mySQL: %s\n", mysql_error(&astfhost));
-	exit(-1);
+    mysql_init(&astfhost);
+    if (!mysql_real_connect(&astfhost, "", user, pass, entry_db, 0, NULL, 0)) {
+		printf("Error connecting to mySQL: %s\n", mysql_error(&astfhost));
+		exit(-1);
     }
     if (mysql_select_db(&astfhost, entry_db)) {
-	printf
-	    ("The database '%s' is invalid or you do not have permission.\n",
-	     entry_db); exit(-1);
+		printf
+			("The database '%s' is invalid or you do not have permission.\n",
+			entry_db); exit(-1);
     }
     /*
      * The following code was added by Glade to create one of each component

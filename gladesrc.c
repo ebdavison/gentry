@@ -59,6 +59,7 @@ GtkWidget *get_widget(GtkWidget * widget, gchar * widget_name)
 }
 
 /* This is an internally used function to set notebook tab widgets. */
+/*
 void
 set_notebook_tab(GtkWidget * notebook, gint page_num, GtkWidget * widget)
 {
@@ -66,14 +67,15 @@ set_notebook_tab(GtkWidget * notebook, gint page_num, GtkWidget * widget)
     GtkWidget *notebook_page;
 
     page = (GtkNotebookPage *)
-	g_list_nth(GTK_NOTEBOOK(notebook)->children, page_num)->data;
+		g_list_nth(GTK_NOTEBOOK(notebook)->children, page_num)->data;
     notebook_page = page->child;
     gtk_widget_ref(notebook_page);
     gtk_notebook_remove_page(GTK_NOTEBOOK(notebook), page_num);
     gtk_notebook_insert_page(GTK_NOTEBOOK(notebook), notebook_page,
-			     widget, page_num);
+		widget, page_num);
     gtk_widget_unref(notebook_page);
 }
+*/
 
 static GList *pixmaps_directories = NULL;
 
@@ -323,7 +325,7 @@ GtkWidget *create_window()
 	    }
 	    maxidrow = mysql_fetch_row(maxiddata);
 	    num_rows = atoi(maxidrow[0]);
-	  printf ("Number of rows in %s = %d\n", entry_table, num_rows);
+		printf ("Number of rows in %s = %d\n", entry_table, num_rows);
 	    
 	    if (num_rows == 0) {
 		    auto_max = 1;
@@ -340,8 +342,8 @@ GtkWidget *create_window()
 			printf("MySQL error: %s\n", mysql_error(&astfhost));
 			exit(-1);
 		    }
-		  printf("Number of rows: %d\n", mysql_num_rows(maxiddata));
-		  printf ("Number of fields: %d\n", mysql_field_count(&astfhost));
+			printf ("Number of rows: %lld\n", mysql_num_rows(maxiddata));
+			printf ("Number of fields: %d\n", mysql_field_count(&astfhost));
 		    maxidrow = mysql_fetch_row(maxiddata);
 		    if (maxidrow == NULL) {
 			    printf("MySQL error: %s\n", mysql_error(&astfhost));
@@ -350,9 +352,9 @@ GtkWidget *create_window()
 		    auto_max = atoi(maxidrow[0]) + 1;
 	    }
 
-          g_print("Auto column = %s, next value = %d\n", auto_column, auto_max);
+        g_print("Auto column = %s, next value = %d\n", auto_column, auto_max);
 	    sprintf(templen, "%d", auto_max);
-          g_print("Auto column data = %s\n", templen);
+        g_print("Auto column data = %s\n", templen);
 	    mysql_free_result(maxiddata);
 	    gtk_entry_set_text(GTK_ENTRY(entry_data[x]), templen);
 	    gtk_entry_set_editable(GTK_ENTRY(entry_data[x]), FALSE);
