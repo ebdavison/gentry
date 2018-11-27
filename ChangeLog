@@ -1,0 +1,79 @@
+Version 0.1
+
+Initial release
+
+Version 0.1.1
+
+Added support for varchar, double, date.
+
+Version 0.1.2
+
+Fixed support for varchar, char and date data types to account for the length 
+of the string for input. Also fixed a segfault caused by the query string 
+being too small.
+
+Version 0.1.3
+
+Small fix to move focus to the first entry box after insert it done as it is 
+quite annoying to have to hit tab 4 times to start the next data entry.
+
+Version 0.1.4
+
+Fixed initial focus so it is now on the first entry field.
+Added error checking for bad db and bad table from command line.
+
+Version 0.1.5
+
+Fixed focus so it is now on the first entry field after the form is cleared.
+Added initial code for ENUM support.  There is currently no error checking
+but I intend to handle this with a drop-down box for the ENUM field in the
+near future.
+
+Version 0.1.6
+
+Added code for auto_increment fields so that the next number to be assigned is displayed in
+the field and editing of this field is disabled.
+
+Version 0.1.7
+
+Fixed the auto_increment code so that the auto_increment field can be
+anywhere in the table definition.  There is still a bug in that if the
+program is run against a table with an auto_increment field and there are NO
+rows, the program will seg fault.  I have not been able to track this down. 
+Any assistance would be appreciated.
+
+Also fixed up the ENUM support so that the ENUM data is displayed in a Combo
+entry that allows the user to choose the item wanted.
+
+Version 0.1.8
+
+Added the time datatype to the support list of known fields so that the 
+insert automatically adds the quotes correctly.
+
+Added support for username and password as well as offering an optional way
+to specify the table and database via the getopt function.  
+
+The new options are:
+
+	-d database
+	-t table
+	-u username
+	-p password
+	-v version
+
+Version 0.1.9
+
+Added code to deal with empty table that has a auto_increment primary key.
+The problem circumvents this case as it was causing segfault when trying
+to get the max(id) from the table (which had 1 row with a NULL value).
+
+Version 0.1.10
+
+Added autoconf/automake code to dynamically look for and configure Mysql
+libs and headers.
+
+Version 0.1.11
+
+Added support for timestamp, datetime, year, float datatypes
+
+

@@ -1,0 +1,36 @@
+Gentry
+
+The data types now supported by Gentry are:
+
+	char
+	varchar
+	int
+	int (auto_increment) - displays next value on screen
+	enum - presents enum types in cobmo box to choose item from
+	double
+	time
+	date
+
+There are now a couple sql files here which will create test tables for use
+in the code testing.  Feel free to give it a whirl.  
+
+The source is now in CVS so it can be checked out and perused freely.
+The current release, 0.1.10, is now yet in CVS however.
+
+There is a new survey that I would like for all of you to fill out and it
+can be found from my home page (below).  I have only had 1 person fill this
+out and I know there are lots of you guys downloading the code and trying it
+out.  So ... I have also included the survey as Survey in the tar.  Please
+fill it out and send it in to me if you do not wish to take the online
+survey.
+
+
+I am in need of help to get the automake routines to correctly locate the mysql
+install directory to find the headers and libraries.  If anyone wants to 
+tackle this, please let me know.
+
+
+
+Ed Davison
+edavison@users.sourceforge.net
+http://gentry.sourceforge.net
