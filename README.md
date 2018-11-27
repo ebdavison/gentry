@@ -1,4 +1,4 @@
-# Gentry v0.1
+# Gentry v0.2.0
 
 This program fits a need of mine for what I have found lacking for quite
 some time in the database realm.  That need, simply put, is data entry.
@@ -15,7 +15,7 @@ for public consumption.
 This program requires MySQL client libraries and development headers as 
 that is the program of choice for my database work.
 
-Also, this requires GTK Version 1.2 and its development headers.
+Also, this requires GTK Version 2.0 and its development headers.
 
 ## Contributions
 
