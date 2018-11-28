@@ -177,7 +177,7 @@ GtkWidget *create_window()
     gtk_widget_show(vbox1);
     gtk_container_add(GTK_CONTAINER(window), vbox1);
 
-    label1 = gtk_label_new("Gentry v0.1");
+    label1 = gtk_label_new("Gentry v0.2.0");
     gtk_object_set_data(GTK_OBJECT(window), "label1", label1);
     gtk_widget_show(label1);
     gtk_box_pack_start(GTK_BOX(vbox1), label1, TRUE, TRUE, 0);
