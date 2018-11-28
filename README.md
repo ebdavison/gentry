@@ -17,6 +17,11 @@ that is the program of choice for my database work.
 
 Also, this requires GTK Version 2.0 and its development headers.
 
+## Screenshots
+
+Example entry screen:
+![screenshot 1](gentry1.png)
+
 ## Contributions
 
 Feel free to modify the program or improve upon it and send the patches
